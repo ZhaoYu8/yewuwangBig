@@ -1,0 +1,28 @@
+// 黑色背景
+$darkly:#0F111E
+// 淡紫色背景
+$lavender: #1E2651
+// 紫白色边框
+$b-c-lavender: #464D71
+// 黄色字体
+$f-c-yellow: #FFC950
+// 暗黑色背景
+@mixin darkColor()
+  color: #fff
+  background: $lavender
+  border-color: $b-c-lavender
+// 头部盒子
+@mixin box()
+  @include darkColor()
+  display: flex
+  height: 195px
+  flex-direction: column
+  border-radius: 2%
+  font-size: 16px
+  padding: 10px 10px 0 10px
+// 头部盒子的头部文字
+@mixin boxHeader()
+  display: flex
+  justify-content: space-between
+  align-items: center
+  font-size: 26px

@@ -1,0 +1,26 @@
+html,body { height: 100%; margin: 0; padding: 0; font-family: "Avenir", Helvetica, Arial, sans-serif; } 
+
+li { list-style-type:none; } 
+.d-f { display: flex; } 
+.a-i-c { align-items: center; } 
+.j-c-c { justify-content: center; } 
+.j-c-s-b { justify-content: space-between; } 
+.f-1 { flex: 1; } 
+/* 文字 */
+.t-c { text-align: center; } 
+.t-l { text-align: left; } 
+.t-r { text-align: right; } 
+.f-24 { font-size: 24px; } 
+.f-36 { font-size: 36px; } 
+.f-40 { font-size: 40px; } 
+.w-240 { width: 240px; } 
+.ml-20 { margin-left: 20px; } 
+.mt-20 { margin-top: 20px; } 
+.mb-20 { margin-bottom: 20px; } 
+.f-l { float: left; } 
+.f-r { float: right; } 
+.p-r { position: relative; } 
+.p-a { position: absolute; } 
+.p-center { left: 50%; transform: translateX(-50%); } 
+
+.c-f { color: #fff; } 
