@@ -10,6 +10,7 @@ li { list-style-type:none; }
 .t-c { text-align: center; } 
 .t-l { text-align: left; } 
 .t-r { text-align: right; } 
+.f-12 { font-size: 12px; } 
 .f-24 { font-size: 24px; } 
 .f-36 { font-size: 36px; } 
 .f-40 { font-size: 40px; } 

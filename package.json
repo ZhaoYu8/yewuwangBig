@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.3.2",
+    "echarts": "^4.4.0",
     "lib-flexible": "^0.3.2",
     "moment": "^2.24.0",
     "view-design": "^4.0.2",

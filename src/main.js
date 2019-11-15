@@ -7,10 +7,15 @@ Vue.config.productionTip = false
 
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
-Vue.use(ViewUI);
-import moment from 'moment'//导入文件
-Vue.prototype.moment = moment;//赋值使用
-moment.locale('zh-cn');//需要汉化
+import moment from 'moment' // 日期转换
+import global from './common/common'
+import myCharts from './charts/myCharts.js' // 图表
+Vue.use(ViewUI); // ViewUI
+Vue.use(myCharts)
+moment.locale('zh-cn');//日期汉化
+Vue.prototype.moment = moment;
+Vue.prototype.$global = global;
+Vue.prototype.bus = new Vue();
 import 'lib-flexible/flexible'
 new Vue({
   router,
