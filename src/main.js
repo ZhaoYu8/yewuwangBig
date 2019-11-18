@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import http from './api/index'
 import router from './router'
 import store from './store'
 import './assets/main.css'
@@ -13,6 +14,7 @@ import myCharts from './charts/myCharts.js' // 图表
 Vue.use(ViewUI); // ViewUI
 Vue.use(myCharts)
 moment.locale('zh-cn');//日期汉化
+Vue.prototype.$post = http.post
 Vue.prototype.moment = moment;
 Vue.prototype.$global = global;
 Vue.prototype.bus = new Vue();

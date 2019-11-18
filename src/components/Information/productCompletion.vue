@@ -1,12 +1,12 @@
 <template>
-  <div class="produced">
+  <div class="productCompletion">
     <div class="header">
       <div class="title">
         <p>已生产数</p>
         <Icon type="ios-alert-outline" class="info" />
       </div>
       <p class="f-40">{{ $global.format(num) }}</p>
-      <div id="contrast"></div>
+      <div id="contrast1"></div>
     </div>
     <div class="footer">
       本月计划 12,321
@@ -16,13 +16,13 @@
 
 <script>
 export default {
-  name: "produced",
+  name: "productCompletion",
   data() {
     return {
       num: 7896,
       day: [21, 32],
       chart: "",
-      chartData: [0, 150, 150, 54, 260, 150, 150, 150, 150]
+      chartData: [80]
     };
   },
   components: {},
@@ -34,7 +34,7 @@ export default {
     }
   },
   mounted() {
-    this.chart = this.$chart.line("contrast", this.chartData);
+    this.chart = this.$chart.plan("contrast1", this.chartData);
     this.bus.$on("onresize", () => {
       this.chart.resize();
     });
@@ -43,7 +43,7 @@ export default {
 </script>
 <style lang="sass" scoped>
 @import '../../assets/common.sass'
-.produced
+.productCompletion
   @include box()
   .header
     flex: 4
@@ -53,7 +53,7 @@ export default {
       @include boxTitle()
     > p
       color: $f-c-yellow
-    #contrast
+    #contrast1
       flex: 1
   .footer
     flex: 1

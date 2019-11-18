@@ -62,7 +62,9 @@ export default {
       this.branchType = false;
     },
     branchOk() {
-      this.company[1] = this.branchList.filter(r => r.value === this.branchModel)[0].label
+      this.company[1] = this.branchList.filter(
+        r => r.value === this.branchModel
+      )[0].label;
       this.cancel();
     }
   },
@@ -75,7 +77,7 @@ export default {
 </script>
 <style lang="sass" scoped>
 .dp-header
-  padding-top: 24px
+  padding-top: 18px
 </style>
 <style lang="sass">
 @import '../../assets/common.sass'
