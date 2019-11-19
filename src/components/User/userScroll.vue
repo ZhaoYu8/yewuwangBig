@@ -3,7 +3,13 @@
     <div class="wrapper" ref="wrapper">
       <div class="content">
         <ul class="nav_mine">
-          <li v-for="(item, index) in arr" :key="index">{{ index }}</li>
+          <li v-for="(item, index) in arr" :key="index">
+            <p class="header">
+              <span><Icon type="md-contact" /> 员工A</span>
+              <span>{{ index }} 分钟前</span>
+            </p>
+            <div :id="'pie' + index" class="pie"></div>
+          </li>
         </ul>
       </div>
     </div>
@@ -11,12 +17,16 @@
 </template>
 
 <script>
-import BScroll from "better-scroll";
+import BScroll from 'better-scroll';
 export default {
-  name: "userScroll",
+  name: 'userScroll',
   data() {
     return {
-      arr: [1, 2, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5, 4, 5, 3, 4, 5, 3, 4, 5, 4, 5, 3, 4, 5, 3, 4, 5, 4, 5, 3, 4, 5, 3, 4, 5]
+      arr: [1, 2, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3],
+      scroll: '',
+      scrollY: 0,
+      scrollIndex: 0,
+      arrList: [],
     };
   },
   components: {},
@@ -24,29 +34,56 @@ export default {
   methods: {},
   mounted() {
     this.$nextTick(() => {
-      let scroll = new BScroll(".wrapper", {
-        scrollX: true
+      this.scroll = new BScroll('.wrapper', {
+        scrollX: true,
+        mouseWheel: true,
       });
+      this.arrList = this.$refs.wrapper.querySelectorAll('li');
+      this.arr.map((r, i) => {
+        let chart = this.$chart.pie(`pie${i}`, [{ value: 32 }, { value: 68 }]);
+      });
+      // setInterval(() => {
+      //   this.scrollY =
+      //     this.arrList[this.scrollIndex].offsetWidth * this.scrollIndex;
+      //   if (this.scrollIndex + 3 === this.arr.length) {
+      //     this.scrollIndex = 0;
+      //   } else {
+      //     this.scrollIndex++;
+      //   }
+      //   this.scroll.scrollTo(-this.scrollY, 0, 500);
+      // }, 1000);
     });
-  }
+  },
 };
 </script>
 <style lang="sass" scoped>
-.userScroll 
+.userScroll
   height: 100%
   .wrapper
     height: 100%
-    width: 80%
-    overflow-x: hidden
+    width: 66.666%
+    overflow: hidden
     .content
       display: inline-block
       height: 100%
       ul
         white-space: nowrap
         height: 100%
+        margin: 0 -5px
         li
+          padding: 0 5px
+          margin: 0 5px
           display: inline-block
           width: 300px
           height: 100%
-          border: 1px solid
+          border: 1px solid #454C6F
+          border-radius: 5px
+          .header
+            display: flex
+            justify-content: space-between
+            font-size: 20px
+          .pie
+            width: 150px
+            height: 150px
+            margin: 0 auto
 </style>

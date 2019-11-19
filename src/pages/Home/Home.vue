@@ -1,44 +1,44 @@
 <template>
   <div class="home">
     <dp-header></dp-header>
-    <Row :gutter="20" index="" class="mt-15">
+    <Row :gutter="20" index="" class="mt-10">
       <Col span="6"> <today-plan-produced></today-plan-produced></Col>
       <Col span="6"> <produced></produced></Col>
       <Col span="6"> <product-completion></product-completion></Col>
       <Col span="6"> <taskFailed></taskFailed></Col>
     </Row>
-    <production-table class="mt-15"></production-table>
-    <div class="f-1 mt-15 o-h">
+    <production-table class="mt-10 production-table"></production-table>
+    <div class="mt-10 o-h mb-10 footer">
       <user-scroll></user-scroll>
     </div>
   </div>
 </template>
 
 <script>
-import dpHeader from "../../components/Header/dpHeader";
-import todayPlanProduced from "../../components/Information/todayPlanProduced";
-import produced from "../../components/Information/produced";
-import taskFailed from "../../components/Information/taskFailed";
-import productCompletion from "../../components/Information/productCompletion";
-import productionTable from "../../components/Table/productionTable";
-import userScroll from "../../components/User/userScroll";
+import dpHeader from '../../components/Header/dpHeader';
+import todayPlanProduced from '../../components/Information/todayPlanProduced';
+import produced from '../../components/Information/produced';
+import taskFailed from '../../components/Information/taskFailed';
+import productCompletion from '../../components/Information/productCompletion';
+import productionTable from '../../components/Table/productionTable';
+import userScroll from '../../components/User/userScroll';
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
-    "dp-header": dpHeader,
-    "today-plan-produced": todayPlanProduced,
+    'dp-header': dpHeader,
+    'today-plan-produced': todayPlanProduced,
     produced: produced,
     taskFailed: taskFailed,
-    "product-completion": productCompletion,
-    "production-table": productionTable,
-    "user-scroll": userScroll
+    'product-completion': productCompletion,
+    'production-table': productionTable,
+    'user-scroll': userScroll,
   },
   data() {
     return {};
   },
   methods: {},
-  mounted() {}
+  mounted() {},
 };
 </script>
 <style lang="sass" scoped>
@@ -49,13 +49,19 @@ export default {
   color: rgb(255, 255, 255)
   padding: 0 30px
   height: inherit
+  .production-table
+    height: 42%
+  .footer
+    height: 26.66%
 </style>
 <style lang="sass">
-.home 
-  .ivu-row 
+.home
+  .ivu-row
     margin-left: -10px !important
     margin-right: -10px !important
-  .ivu-col 
+    height: 22%
+  .ivu-col
     padding-left: 10px !important
     padding-right: 10px !important
+    height: 100%
 </style>

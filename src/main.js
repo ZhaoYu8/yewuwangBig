@@ -15,6 +15,7 @@ Vue.use(ViewUI); // ViewUI
 Vue.use(myCharts)
 moment.locale('zh-cn');//日期汉化
 Vue.prototype.$post = http.post
+Vue.prototype.$get = http.get
 Vue.prototype.moment = moment;
 Vue.prototype.$global = global;
 Vue.prototype.bus = new Vue();

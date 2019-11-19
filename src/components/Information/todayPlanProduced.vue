@@ -5,7 +5,7 @@
         <p>今日待生产</p>
         <Icon type="ios-alert-outline" class="info" />
       </div>
-      <p class="f-40">{{ $global.format(num) }}</p>
+      <p class="f-48 f-l-48 mt-10">{{ $global.format(num) }}</p>
       <ul class="contrast">
         <li>
           <span>日周比</span>
@@ -35,17 +35,17 @@
 
 <script>
 export default {
-  name: "todayPlanProduced",
+  name: 'todayPlanProduced',
   data() {
     return {
       num: 8512,
-      day: [21, 32]
+      day: [21, 32],
     };
   },
   components: {},
   computed: {},
   methods: {},
-  mounted() {}
+  mounted() {},
 };
 </script>
 <style lang="sass" scoped>
@@ -65,6 +65,7 @@ export default {
       flex: 1
       align-items: center
       li
+        line-height: 23px
         flex: 1
         font-size: 20px
         &:nth-child(1)
@@ -73,11 +74,11 @@ export default {
         &:nth-child(2)
           padding-left: 5px
   .footer
-    flex: 1
     border-top: 1px solid #fff
     display: flex
     align-items: center
     font-size: 24px
+    height: 40px
+    line-height: 40px
 </style>
-<style lang="sass">
-</style>
+<style lang="sass"></style>
