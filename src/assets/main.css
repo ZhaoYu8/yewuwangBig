@@ -105,6 +105,7 @@ td {
   background-color: #13182b !important;
   border-color: #d5d5d5 !important;
   color: #fff;
+  transition: all 0.2s;
 }
 .diablo .ivu-table th {
   background-color: #1e2651 !important;

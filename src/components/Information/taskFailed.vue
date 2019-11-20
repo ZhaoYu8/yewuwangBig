@@ -32,10 +32,13 @@ export default {
   methods: {},
   mounted() {
     setTimeout(() => {
-      this.circleWidth = this.$refs.circle.clientWidth * 0.4;
+      this.circleWidth = document.querySelector('html').clientHeight * 0.22 * 0.7;
     }, 100);
     this.bus.$on('onresize', () => {
-      this.circleWidth = this.$refs.circle.clientWidth * 0.4;
+      this.$nextTick(() => {
+        this.circleWidth = document.querySelector('html').clientHeight * 0.22 * 0.7;
+        this.num--;
+      });
     });
   }
 };
@@ -62,4 +65,9 @@ export default {
     position: absolute
     right: 0%
     bottom: 5%
+</style>
+<style lang="sass">
+.taskFailed
+  .ivu-chart-circle
+    transition: all .2s
 </style>

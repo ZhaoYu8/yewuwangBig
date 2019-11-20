@@ -1,12 +1,12 @@
 <template>
-  <div class="dp-header">
-    <ul class="d-f a-i-c j-c-s-b p-r">
+  <div class="dp-header p-r">
+    <ul class="d-f a-i-c j-c-s-b">
       <li>
         <Select v-model="model" class="select">
           <Option v-for="item in list" :value="item.value" :key="item.value">{{ item.label }}</Option>
         </Select>
       </li>
-      <li class="f-36 d-f p-center p-a">
+      <li class="f-36 d-f p-center p-a" style="top:0">
         <p>{{ company[0] }}-</p>
         <p @click="branchType = true">{{ company[1] }}</p>
         <p class="ml-20">生产看板</p>

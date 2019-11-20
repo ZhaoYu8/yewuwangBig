@@ -1,6 +1,6 @@
 <template>
   <div class="productionTable" ref="productionTable">
-    <Table :columns="columns" :data="data" border class="diablo"></Table>
+    <Table :columns="columns" :data="data" border class="diablo" ellipsis="true"></Table>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       columns: [
-        { title: '订单号', key: 'serialNo' },
+        { title: '订单号', key: 'serialNo', width: 150, ellipsis: true, tooltip: true },
         { title: '产品编号', key: 'name' },
         { title: '产品名称', key: 'name' },
         { title: '产品规格', key: 'name' },
@@ -29,9 +29,9 @@ export default {
       this.$nextTick(() => {
         let dom = document.querySelector('.productionTable');
         let domArr = dom.querySelectorAll('.ivu-table-border td, .ivu-table-border th');
-        let _height = (document.querySelector('html').clientHeight * 0.4) / 6;
+        let _height = (document.querySelector('html').clientHeight * 0.4) / 6; // 这里0.4是指表格总高度的百分比
         dom.querySelector('.diablo .ivu-table th').style.height = _height + 'px';
-        domArr.forEach(r => {
+        domArr.forEach((r) => {
           r.style.height = _height + 'px';
         });
       });
@@ -43,7 +43,7 @@ export default {
       pageIndex: 1,
       pageSize: 5,
       progressTemplateId: 0
-    }).then(data => {
+    }).then((data) => {
       this.data = data.data.result.items;
       this.refresh();
     });

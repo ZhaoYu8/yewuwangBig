@@ -2,7 +2,6 @@
  * 各种画echarts图表的方法都封装在这里
  */
 
-import echarts from 'echarts';
 // 因为echarts需要id的，所以要加id,就往这个数组里面加一个。
 let echartId = ['contrast', 'contrast1'];
 const install = function(Vue) {

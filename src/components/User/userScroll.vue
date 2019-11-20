@@ -29,15 +29,24 @@ export default {
       arr: [1, 2, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3],
       scroll: '',
       scrollY: 0,
-      scrollIndex: 0
+      scrollIndex: 0,
+      setInterval: '',
+      chartArr: []
     };
   },
   components: {},
   computed: {},
   methods: {
     refresh() {
+      return;
       let arrList = document.querySelector('.wrapper').querySelectorAll('li');
-      setInterval(() => {
+      let _height = document.querySelector('html').clientHeight;
+      document.querySelectorAll('.pie').forEach((r, index) => {
+        r.style.height = _height * 0.22 * 0.9 + 'px';
+        r.style.width = r.style.height;
+        this.chartArr[index].resize();
+      });
+      this.setInterval = setInterval(() => {
         let x = arrList[this.scrollIndex];
         this.scrollY = x.offsetWidth + parseFloat(document.defaultView.getComputedStyle(x, null)['marginLeft']) * 2;
         if (this.scrollIndex === this.arr.length - 3) {
@@ -58,8 +67,14 @@ export default {
       });
       this.arr.map((r, i) => {
         let chart = this.$chart.pie(`pie${i}`, [{ value: 32 }, { value: 68 }]);
+        this.chartArr.push(chart);
       });
       this.refresh();
+    });
+    let that = this;
+    this.bus.$on('onresize', () => {
+      clearInterval(this.setInterval);
+      that.refresh.bind(that)();
     });
   }
 };
@@ -70,7 +85,7 @@ export default {
   .wrapper
     height: 100%
     width: 72.3%
-    overflow: hidden
+    overflow-x: hidden
     .content
       display: inline-block
       height: 100%
