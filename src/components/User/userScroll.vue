@@ -9,6 +9,10 @@
               <span>{{ index }} 分钟前</span>
             </p>
             <div :id="'pie' + index" class="pie"></div>
+            <div class="footer">
+              <p>已完成任务</p>
+              <p>未完成任务</p>
+            </div>
           </li>
         </ul>
       </div>
@@ -25,35 +29,39 @@ export default {
       arr: [1, 2, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3],
       scroll: '',
       scrollY: 0,
-      scrollIndex: 0,
-      arrList: [],
+      scrollIndex: 0
     };
   },
   components: {},
   computed: {},
-  methods: {},
+  methods: {
+    refresh() {
+      let arrList = document.querySelector('.wrapper').querySelectorAll('li');
+      setInterval(() => {
+        let x = arrList[this.scrollIndex];
+        this.scrollY = x.offsetWidth + parseFloat(document.defaultView.getComputedStyle(x, null)['marginLeft']) * 2;
+        if (this.scrollIndex === this.arr.length - 3) {
+          this.scroll.scrollTo(0, 0, 500);
+          this.scrollIndex = 0;
+        } else {
+          this.scroll.scrollBy(-this.scrollY, 0, 500);
+          this.scrollIndex++;
+        }
+      }, 6000);
+    }
+  },
   mounted() {
     this.$nextTick(() => {
       this.scroll = new BScroll('.wrapper', {
         scrollX: true,
-        mouseWheel: true,
+        mouseWheel: true
       });
-      this.arrList = this.$refs.wrapper.querySelectorAll('li');
       this.arr.map((r, i) => {
         let chart = this.$chart.pie(`pie${i}`, [{ value: 32 }, { value: 68 }]);
       });
-      // setInterval(() => {
-      //   this.scrollY =
-      //     this.arrList[this.scrollIndex].offsetWidth * this.scrollIndex;
-      //   if (this.scrollIndex + 3 === this.arr.length) {
-      //     this.scrollIndex = 0;
-      //   } else {
-      //     this.scrollIndex++;
-      //   }
-      //   this.scroll.scrollTo(-this.scrollY, 0, 500);
-      // }, 1000);
+      this.refresh();
     });
-  },
+  }
 };
 </script>
 <style lang="sass" scoped>
@@ -71,10 +79,12 @@ export default {
         height: 100%
         margin: 0 -10px
         li
+          justify-content: space-between
           padding: 10px 10px 0 10px
           margin: 0 10px
-          display: inline-block
-          width: 310px
+          display: inline-flex
+          flex-direction: column
+          width: 315px
           height: 100%
           border: 1px solid #454C6F
           border-radius: 5px
@@ -84,7 +94,28 @@ export default {
             font-size: 26px
             line-height: 26px
           .pie
-            width: 140px
-            height: 140px
+            width: 100px
+            height: 100px
             margin: 0 auto
+          .footer
+            display: flex
+            justify-content: space-between
+            font-size: 20px
+            line-height: 28px
+            p
+              display: flex
+              align-items: center
+              &:nth-child(1)
+                &:before
+                  background-color: #238eff
+                  border-color: #238eff
+              &:before
+                content: ""
+                background-color: #f4ae00
+                margin-right: 5px
+                border: 1px solid #f4ae00
+                display: inline-block
+                border-radius: 50%
+                width: 15px
+                height: 15px
 </style>

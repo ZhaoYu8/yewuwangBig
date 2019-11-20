@@ -17,9 +17,9 @@ export default {
         { title: '生产日期', key: 'name' },
         { title: '计划数量', key: 'name' },
         { title: '生产数量', key: 'name' },
-        { title: '剩余', key: 'name' },
+        { title: '剩余', key: 'name' }
       ],
-      data: [],
+      data: []
     };
   },
   components: {},
@@ -28,25 +28,21 @@ export default {
     refresh() {
       this.$nextTick(() => {
         let dom = document.querySelector('.productionTable');
-        let domArr = dom.querySelectorAll(
-          '.ivu-table-border td, .ivu-table-border th',
-        );
+        let domArr = dom.querySelectorAll('.ivu-table-border td, .ivu-table-border th');
         let _height = (document.querySelector('html').clientHeight * 0.4) / 6;
-        console.log(_height);
-        dom.querySelector('.diablo .ivu-table th').style.height =
-          _height + 'px';
+        dom.querySelector('.diablo .ivu-table th').style.height = _height + 'px';
         domArr.forEach(r => {
           r.style.height = _height + 'px';
         });
       });
-    },
+    }
   },
   mounted() {
     this.$post('tracking/GetBusinessManageRpt', {
       filterName: '',
       pageIndex: 1,
       pageSize: 5,
-      progressTemplateId: 0,
+      progressTemplateId: 0
     }).then(data => {
       this.data = data.data.result.items;
       this.refresh();
@@ -55,7 +51,7 @@ export default {
     this.bus.$on('onresize', () => {
       that.refresh.bind(that)();
     });
-  },
+  }
 };
 </script>
 <style lang="sass"></style>

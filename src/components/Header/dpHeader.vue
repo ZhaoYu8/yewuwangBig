@@ -3,9 +3,7 @@
     <ul class="d-f a-i-c j-c-s-b p-r">
       <li>
         <Select v-model="model" class="select">
-          <Option v-for="item in list" :value="item.value" :key="item.value">{{
-            item.label
-          }}</Option>
+          <Option v-for="item in list" :value="item.value" :key="item.value">{{ item.label }}</Option>
         </Select>
       </li>
       <li class="f-36 d-f p-center p-a">
@@ -15,20 +13,10 @@
       </li>
       <li class="f-24">{{ newDate }}</li>
     </ul>
-    <Modal
-      v-model="branchType"
-      draggable
-      class-name="vertical-center-modal"
-      width="360"
-    >
+    <Modal v-model="branchType" draggable class-name="vertical-center-modal" width="360">
       <p class="mb-20">请选择部门</p>
       <Select v-model="branchModel" class="select">
-        <Option
-          v-for="item in branchList"
-          :value="item.value"
-          :key="item.value"
-          >{{ item.label }}</Option
-        >
+        <Option v-for="item in branchList" :value="item.value" :key="item.value">{{ item.label }}</Option>
       </Select>
       <div slot="footer" class="t-c">
         <Button @click="cancel">取消</Button>
@@ -45,17 +33,17 @@ export default {
     return {
       list: [
         { value: 1, label: '选项一' },
-        { value: 2, label: '选项二' },
+        { value: 2, label: '选项二' }
       ],
       branchList: [
         { value: 1, label: '部门一' },
-        { value: 2, label: '部门二' },
+        { value: 2, label: '部门二' }
       ],
       model: '',
       branchModel: '',
       branchType: false,
       company: ['企业名称', '部门名称'],
-      newDate: this.moment().format('YYYY年MM月DD日 HH:mm:ss'),
+      newDate: this.moment().format('YYYY年MM月DD日 HH:mm:ss')
     };
   },
   components: {},
@@ -65,17 +53,15 @@ export default {
       this.branchType = false;
     },
     branchOk() {
-      this.company[1] = this.branchList.filter(
-        r => r.value === this.branchModel,
-      )[0].label;
+      this.company[1] = this.branchList.filter((r) => r.value === this.branchModel)[0].label;
       this.cancel();
-    },
+    }
   },
   mounted() {
     setInterval(() => {
       this.newDate = this.moment().format('YYYY年MM月DD日 HH:mm:ss');
     }, 1000);
-  },
+  }
 };
 </script>
 <style lang="sass" scoped>

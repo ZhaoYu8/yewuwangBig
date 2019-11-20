@@ -22,17 +22,17 @@ const install = function(Vue) {
                 left: '0%',
                 right: '0%',
                 top: '0%',
-                bottom: '10%',
+                bottom: '10%'
               },
               backgroundColor: '#1E2651',
               xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                show: false,
+                show: false
               },
               yAxis: {
                 type: 'value',
-                show: false,
+                show: false
               },
               series: [
                 {
@@ -40,9 +40,9 @@ const install = function(Vue) {
                   type: 'line',
                   smooth: true,
                   data: data,
-                  areaStyle: {},
-                },
-              ],
+                  areaStyle: {}
+                }
+              ]
             };
             return this.init(id, optionData);
           },
@@ -52,17 +52,17 @@ const install = function(Vue) {
                 left: '0',
                 top: '0',
                 right: '0',
-                bottom: '0',
+                bottom: '0'
               },
               xAxis: {
                 type: 'value', //坐标轴类型,分别有：
                 splitLine: { show: false }, //坐标轴在 grid 区域中的分隔线
-                axisLabel: { show: false }, //坐标轴刻度标签
+                axisLabel: { show: false } //坐标轴刻度标签
               },
               yAxis: {
                 type: 'category',
                 axisTick: { show: false },
-                axisLine: { show: false },
+                axisLine: { show: false }
               },
               series: [
                 {
@@ -73,10 +73,10 @@ const install = function(Vue) {
                   itemStyle: {
                     //图形样式
                     normal: {
-                      color: '#F4AE00',
-                    },
+                      color: '#F4AE00'
+                    }
                   },
-                  zlevel: 1, //柱状图所有图形的 zlevel 值,
+                  zlevel: 1 //柱状图所有图形的 zlevel 值,
                 },
                 {
                   name: '进度条背景',
@@ -84,9 +84,9 @@ const install = function(Vue) {
                   barGap: '-100%', //不同系列的柱间距离，为百分比。
                   barWidth: 19,
                   data: [100],
-                  color: '#F9E1A4', //柱条颜色
-                },
-              ],
+                  color: '#F9E1A4' //柱条颜色
+                }
+              ]
             };
             return this.init(id, optionData);
           },
@@ -97,7 +97,7 @@ const install = function(Vue) {
                 left: '0%',
                 right: '0%',
                 top: '0%',
-                bottom: '0%',
+                bottom: '0%'
               },
               series: [
                 {
@@ -109,20 +109,20 @@ const install = function(Vue) {
                   label: {
                     position: 'inner',
                     formatter: '{c}',
-                    fontSize: 24,
+                    fontSize: 24
                   },
-                  data: data,
-                },
-              ],
+                  data: data
+                }
+              ]
             };
             return this.init(id, optionData);
-          },
+          }
         };
-      },
-    },
+      }
+    }
   });
 };
 
 export default {
-  install,
+  install
 };

@@ -32,13 +32,13 @@ export default {
     taskFailed: taskFailed,
     'product-completion': productCompletion,
     'production-table': productionTable,
-    'user-scroll': userScroll,
+    'user-scroll': userScroll
   },
   data() {
     return {};
   },
   methods: {},
-  mounted() {},
+  mounted() {}
 };
 </script>
 <style lang="sass" scoped>

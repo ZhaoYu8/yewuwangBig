@@ -22,7 +22,7 @@ export default {
       num: 7896,
       day: [21, 32],
       chart: '',
-      chartData: [0, 150, 150, 54, 260, 150, 150, 150, 150],
+      chartData: [0, 150, 150, 54, 260, 150, 150, 150, 150]
     };
   },
   components: {},
@@ -31,14 +31,14 @@ export default {
     format(num) {
       var reg = /\d{1,3}(?=(\d{3})+$)/g;
       return (num + '').replace(reg, '$&,');
-    },
+    }
   },
   mounted() {
     this.chart = this.$chart.oscillogram('contrast', this.chartData);
     this.bus.$on('onresize', () => {
       this.chart.resize();
     });
-  },
+  }
 };
 </script>
 <style lang="sass" scoped>

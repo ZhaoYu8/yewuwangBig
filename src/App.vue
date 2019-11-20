@@ -23,7 +23,7 @@ export default {
         });
       }, 300); //页面大小变化，重新加载页面以刷新MAP
     };
-  },
+  }
 };
 </script>
 <style lang="scss">

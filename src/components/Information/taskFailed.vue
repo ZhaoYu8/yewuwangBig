@@ -7,12 +7,7 @@
       </div>
     </div>
     <div class="completion" ref="circle">
-      <i-circle
-        :size="circleWidth"
-        :percent="num"
-        stroke-linecap="square"
-        stroke-color="#43a3fb"
-      >
+      <i-circle :size="circleWidth" :percent="num" stroke-linecap="square" stroke-color="#43a3fb">
         <div class="circle-custom">
           <p>{{ num }}%</p>
           <span> 完成率 </span>
@@ -29,7 +24,7 @@ export default {
   data() {
     return {
       circleWidth: 150,
-      num: 78,
+      num: 78
     };
   },
   components: {},
@@ -42,7 +37,7 @@ export default {
     this.bus.$on('onresize', () => {
       this.circleWidth = this.$refs.circle.clientWidth * 0.4;
     });
-  },
+  }
 };
 </script>
 <style lang="sass" scoped>

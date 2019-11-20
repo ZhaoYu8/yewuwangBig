@@ -9,19 +9,13 @@
       <ul class="contrast">
         <li>
           <span>日周比</span>
-          <Icon
-            class="f-24"
-            :type="day[0] > 10 ? 'md-arrow-dropdown' : 'md-arrow-dropup'"
-          />
+          <Icon class="f-24" :type="day[0] > 10 ? 'md-arrow-dropdown' : 'md-arrow-dropup'" />
           <span>{{ day[0] }}</span
           >%
         </li>
         <li>
           <span>月周比</span>
-          <Icon
-            class="f-24"
-            :type="day[0] < 10 ? 'md-arrow-dropdown' : 'md-arrow-dropup'"
-          />
+          <Icon class="f-24" :type="day[0] < 10 ? 'md-arrow-dropdown' : 'md-arrow-dropup'" />
           <span>{{ day[1] }}</span
           >%
         </li>
@@ -39,13 +33,13 @@ export default {
   data() {
     return {
       num: 8512,
-      day: [21, 32],
+      day: [21, 32]
     };
   },
   components: {},
   computed: {},
   methods: {},
-  mounted() {},
+  mounted() {}
 };
 </script>
 <style lang="sass" scoped>
