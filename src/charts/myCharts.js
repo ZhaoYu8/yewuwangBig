@@ -102,7 +102,10 @@ const install = function(Vue) {
               series: [
                 {
                   type: 'pie',
+                  hoverAnimation: false,
                   color: ['#f4ae00', '#238eff'],
+                  minAngle: 0,
+                  radius: ['0%', '100%'],
                   label: {
                     position: 'inner',
                     formatter: '{c}',

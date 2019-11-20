@@ -40,19 +40,22 @@
 
 <script>
 export default {
-  name: "dpHeader",
+  name: 'dpHeader',
   data() {
     return {
-      list: [{ value: 1, label: "选项一" }, { value: 2, label: "选项二" }],
-      branchList: [
-        { value: 1, label: "部门一" },
-        { value: 2, label: "部门二" }
+      list: [
+        { value: 1, label: '选项一' },
+        { value: 2, label: '选项二' },
       ],
-      model: "",
-      branchModel: "",
+      branchList: [
+        { value: 1, label: '部门一' },
+        { value: 2, label: '部门二' },
+      ],
+      model: '',
+      branchModel: '',
       branchType: false,
-      company: ["企业名称", "部门名称"],
-      newDate: this.moment().format("YYYY年MM月DD日 HH:mm:ss")
+      company: ['企业名称', '部门名称'],
+      newDate: this.moment().format('YYYY年MM月DD日 HH:mm:ss'),
     };
   },
   components: {},
@@ -63,21 +66,21 @@ export default {
     },
     branchOk() {
       this.company[1] = this.branchList.filter(
-        r => r.value === this.branchModel
+        r => r.value === this.branchModel,
       )[0].label;
       this.cancel();
-    }
+    },
   },
   mounted() {
     setInterval(() => {
-      this.newDate = this.moment().format("YYYY年MM月DD日 HH:mm:ss");
+      this.newDate = this.moment().format('YYYY年MM月DD日 HH:mm:ss');
     }, 1000);
-  }
+  },
 };
 </script>
 <style lang="sass" scoped>
 .dp-header
-  padding-top: 18px
+  padding-top: 10px
 </style>
 <style lang="sass">
 @import '../../assets/common.sass'
@@ -104,5 +107,5 @@ export default {
         line-height: 36px
     .ivu-modal-content
       width: 100%
-      @include darkColor()  
+      @include darkColor()
 </style>

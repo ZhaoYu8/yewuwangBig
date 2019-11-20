@@ -1,5 +1,5 @@
 <template>
-  <div class="productionTable">
+  <div class="productionTable" ref="productionTable">
     <Table :columns="columns" :data="data" border class="diablo"></Table>
   </div>
 </template>
@@ -24,7 +24,23 @@ export default {
   },
   components: {},
   computed: {},
-  methods: {},
+  methods: {
+    refresh() {
+      this.$nextTick(() => {
+        let dom = document.querySelector('.productionTable');
+        let domArr = dom.querySelectorAll(
+          '.ivu-table-border td, .ivu-table-border th',
+        );
+        let _height = (document.querySelector('html').clientHeight * 0.4) / 6;
+        console.log(_height);
+        dom.querySelector('.diablo .ivu-table th').style.height =
+          _height + 'px';
+        domArr.forEach(r => {
+          r.style.height = _height + 'px';
+        });
+      });
+    },
+  },
   mounted() {
     this.$post('tracking/GetBusinessManageRpt', {
       filterName: '',
@@ -33,6 +49,11 @@ export default {
       progressTemplateId: 0,
     }).then(data => {
       this.data = data.data.result.items;
+      this.refresh();
+    });
+    let that = this;
+    this.bus.$on('onresize', () => {
+      that.refresh.bind(that)();
     });
   },
 };

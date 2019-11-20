@@ -5,7 +5,7 @@
         <p>已生产数</p>
         <Icon type="ios-alert-outline" class="info" />
       </div>
-      <p class="f-48 f-l-48 mt-10">{{ $global.format(num) }}</p>
+      <p class="f-48 f-l-48">{{ $global.format(num) }}</p>
       <div id="contrast1"></div>
     </div>
     <div class="footer">

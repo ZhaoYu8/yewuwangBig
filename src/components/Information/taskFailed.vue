@@ -25,11 +25,11 @@
 
 <script>
 export default {
-  name: "taskFailed",
+  name: 'taskFailed',
   data() {
     return {
       circleWidth: 150,
-      num: 78
+      num: 78,
     };
   },
   components: {},
@@ -39,10 +39,10 @@ export default {
     setTimeout(() => {
       this.circleWidth = this.$refs.circle.clientWidth * 0.4;
     }, 100);
-    this.bus.$on("onresize", () => {
+    this.bus.$on('onresize', () => {
       this.circleWidth = this.$refs.circle.clientWidth * 0.4;
     });
-  }
+  },
 };
 </script>
 <style lang="sass" scoped>
@@ -61,7 +61,7 @@ export default {
     align-items: center
     justify-content: center
   .circle-custom
-    font-size: 26px  
+    font-size: 26px
   .contrast
     font-size: 24px
     position: absolute

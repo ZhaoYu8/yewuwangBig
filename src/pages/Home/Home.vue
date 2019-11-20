@@ -8,7 +8,7 @@
       <Col span="6"> <taskFailed></taskFailed></Col>
     </Row>
     <production-table class="mt-10 production-table"></production-table>
-    <div class="mt-10 o-h mb-10 footer">
+    <div class="o-h footer mt-10">
       <user-scroll></user-scroll>
     </div>
   </div>
@@ -50,9 +50,9 @@ export default {
   padding: 0 30px
   height: inherit
   .production-table
-    height: 42%
+    height: 40%
   .footer
-    height: 26.66%
+    height: 26%
 </style>
 <style lang="sass">
 .home

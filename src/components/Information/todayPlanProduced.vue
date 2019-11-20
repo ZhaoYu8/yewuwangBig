@@ -5,7 +5,7 @@
         <p>今日待生产</p>
         <Icon type="ios-alert-outline" class="info" />
       </div>
-      <p class="f-48 f-l-48 mt-10">{{ $global.format(num) }}</p>
+      <p class="f-48 f-l-48">{{ $global.format(num) }}</p>
       <ul class="contrast">
         <li>
           <span>日周比</span>
@@ -65,9 +65,9 @@ export default {
       flex: 1
       align-items: center
       li
-        line-height: 23px
+        line-height: 24px
         flex: 1
-        font-size: 20px
+        font-size: 24px
         &:nth-child(1)
           padding-right: 5px
           border-right: 1px solid #fff

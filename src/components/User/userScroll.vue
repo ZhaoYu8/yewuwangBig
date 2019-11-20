@@ -61,7 +61,7 @@ export default {
   height: 100%
   .wrapper
     height: 100%
-    width: 66.666%
+    width: 72.3%
     overflow: hidden
     .content
       display: inline-block
@@ -69,21 +69,22 @@ export default {
       ul
         white-space: nowrap
         height: 100%
-        margin: 0 -5px
+        margin: 0 -10px
         li
-          padding: 0 5px
-          margin: 0 5px
+          padding: 10px 10px 0 10px
+          margin: 0 10px
           display: inline-block
-          width: 300px
+          width: 310px
           height: 100%
           border: 1px solid #454C6F
           border-radius: 5px
           .header
             display: flex
             justify-content: space-between
-            font-size: 20px
+            font-size: 26px
+            line-height: 26px
           .pie
-            width: 150px
-            height: 150px
+            width: 140px
+            height: 140px
             margin: 0 auto
 </style>
