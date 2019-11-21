@@ -1,16 +1,14 @@
 <template>
   <div class="home">
     <dp-header></dp-header>
-    <Row :gutter="20" index="" class="mt-10">
+    <Row :gutter="20" index="" class="mt-10" :style="{ height: boxHeight + '%' }">
       <Col span="6"> <today-plan-produced></today-plan-produced></Col>
       <Col span="6"> <produced></produced></Col>
       <Col span="6"> <product-completion></product-completion></Col>
-      <Col span="6"> <taskFailed></taskFailed></Col>
+      <Col span="6"> <taskFailed :height="boxHeight"></taskFailed></Col>
     </Row>
-    <production-table class="mt-10 production-table"></production-table>
-    <div class="o-h footer mt-10">
-      <user-scroll></user-scroll>
-    </div>
+    <production-table :height="productionHeight"></production-table>
+    <user-scroll :height="userHeight"></user-scroll>
   </div>
 </template>
 
@@ -35,7 +33,11 @@ export default {
     'user-scroll': userScroll
   },
   data() {
-    return {};
+    return {
+      boxHeight: 22,
+      productionHeight: 40,
+      userHeight: 26
+    };
   },
   methods: {},
   mounted() {}
@@ -49,17 +51,12 @@ export default {
   color: rgb(255, 255, 255)
   padding: 0 30px
   height: inherit
-  .production-table
-    height: 40%
-  .footer
-    height: 26%
 </style>
 <style lang="sass">
 .home
   .ivu-row
     margin-left: -10px !important
     margin-right: -10px !important
-    height: 22%
   .ivu-col
     padding-left: 10px !important
     padding-right: 10px !important

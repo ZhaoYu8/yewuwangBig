@@ -27,16 +27,19 @@ export default {
       num: 78
     };
   },
+  props: {
+    height: Number
+  },
   components: {},
   computed: {},
   methods: {},
   mounted() {
     setTimeout(() => {
-      this.circleWidth = document.querySelector('html').clientHeight * 0.22 * 0.7;
+      this.circleWidth = ((document.querySelector('html').clientHeight * this.height) / 100) * 0.7;
     }, 100);
     this.bus.$on('onresize', () => {
       this.$nextTick(() => {
-        this.circleWidth = document.querySelector('html').clientHeight * 0.22 * 0.7;
+        this.circleWidth = ((document.querySelector('html').clientHeight * this.height) / 100) * 0.7;
         this.num--;
       });
     });

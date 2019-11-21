@@ -1,5 +1,5 @@
 <template>
-  <div class="productionTable" ref="productionTable">
+  <div class="mt-10" :style="{ height: height + '%' }">
     <Table :columns="columns" :data="data" border class="diablo" ellipsis="true"></Table>
   </div>
 </template>
@@ -22,16 +22,20 @@ export default {
       data: []
     };
   },
+  props: {
+    height: Number
+  },
   components: {},
-  computed: {},
+  computed: {
+    productionTableChildrenDom() {
+      return document.querySelectorAll('.diablo .ivu-table td, .ivu-table th');
+    }
+  },
   methods: {
     refresh() {
       this.$nextTick(() => {
-        let dom = document.querySelector('.productionTable');
-        let domArr = dom.querySelectorAll('.ivu-table-border td, .ivu-table-border th');
-        let _height = (document.querySelector('html').clientHeight * 0.4) / 6; // 这里0.4是指表格总高度的百分比
-        dom.querySelector('.diablo .ivu-table th').style.height = _height + 'px';
-        domArr.forEach((r) => {
+        let _height = (document.querySelector('html').clientHeight * this.height) / 100 / 6; // 这里6是表格一共6行来计算的
+        this.productionTableChildrenDom.forEach((r) => {
           r.style.height = _height + 'px';
         });
       });
