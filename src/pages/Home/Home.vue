@@ -8,7 +8,10 @@
       <Col span="6"> <taskFailed :height="boxHeight"></taskFailed></Col>
     </Row>
     <production-table :height="productionHeight"></production-table>
-    <user-scroll :height="userHeight"></user-scroll>
+    <div class="d-f mt-10" :style="{ height: userHeight + '%' }">
+      <user-scroll :height="userHeight" :width="72.3"></user-scroll>
+      <product-message></product-message>
+    </div>
   </div>
 </template>
 
@@ -20,6 +23,7 @@ import taskFailed from '../../components/Information/taskFailed';
 import productCompletion from '../../components/Information/productCompletion';
 import productionTable from '../../components/Table/productionTable';
 import userScroll from '../../components/User/userScroll';
+import productMessage from '../../components/Message/productMessage';
 
 export default {
   name: 'home',
@@ -30,7 +34,8 @@ export default {
     taskFailed: taskFailed,
     'product-completion': productCompletion,
     'production-table': productionTable,
-    'user-scroll': userScroll
+    'user-scroll': userScroll,
+    'product-message': productMessage
   },
   data() {
     return {

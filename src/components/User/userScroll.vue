@@ -1,5 +1,5 @@
 <template>
-  <div class="userScroll mt-10" :style="{ height: height + '%' }">
+  <div class="userScroll" :style="{ width: width + '%' }">
     <div class="wrapper" ref="wrapper" @mouseenter="userMouseenter" @mouseleave="userMouseleave">
       <div class="content">
         <ul class="nav_mine">
@@ -35,7 +35,8 @@ export default {
     };
   },
   props: {
-    height: Number
+    height: Number,
+    width: Number
   },
   components: {},
   computed: {},
@@ -68,7 +69,7 @@ export default {
           this.scroll.scrollBy(-this.scrollY, 0, 500);
           this.scrollIndex++;
         }
-      }, 1000);
+      }, 5000);
     },
     userMouseenter() {
       // 移入事件
@@ -105,11 +106,9 @@ export default {
 </script>
 <style lang="sass" scoped>
 .userScroll
-  height: 100%
   .wrapper
     height: 100%
-    width: 72.3%
-    overflow-x: hidden
+    overflow: hidden
     .content
       display: inline-block
       height: 100%
