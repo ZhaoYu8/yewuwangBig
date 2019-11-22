@@ -2,14 +2,14 @@
   <div class="produced">
     <div class="header">
       <div class="title">
-        <p>已生产数</p>
+        <p>今日待完成订单</p>
         <Icon type="ios-alert-outline" class="info" />
       </div>
       <p class="f-48 f-l-48">{{ $global.format(num) }}</p>
       <div id="contrast"></div>
     </div>
     <div class="footer">
-      本月计划 12,321
+      人均生产数 12,321
     </div>
   </div>
 </template>

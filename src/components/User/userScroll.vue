@@ -42,6 +42,7 @@ export default {
   computed: {},
   methods: {
     refresh() {
+      return;
       // 取得class 为 wrapper 下的全部的li
       let arrList = document.querySelector('.userScroll .wrapper').querySelectorAll('li');
       // 拿到当前html高度，因为全屏和不是全屏差别很大。 百分比高度不精准，总是慢一点，所以直接取的html的高度计算了。
@@ -89,7 +90,7 @@ export default {
       });
       // 生成饼图
       this.arr.map((r, i) => {
-        let chart = this.$chart.pie(`pie${i}`, [{ value: 32 }, { value: 68 }]);
+        let chart = this.$chart.pie(`pie${i}`, [{ value: 55 }, { value: 168 }]);
         this.chartArr.push(chart);
       });
       // 初始化 & 初始化员工滚动
@@ -115,14 +116,14 @@ export default {
       ul
         white-space: nowrap
         height: 100%
-        margin: 0 -10px
+        margin: 0 -9px
         li
           justify-content: space-between
           padding: 10px 10px 0 10px
           margin: 0 10px
           display: inline-flex
           flex-direction: column
-          width: 315px
+          width: 322px
           height: 100%
           border: 1px solid #454C6F
           border-radius: 5px

@@ -2,7 +2,7 @@
   <div class="taskFailed">
     <div class="header">
       <div class="title">
-        <p>已生产数</p>
+        <p>订单完成率</p>
         <Icon type="ios-alert-outline" class="info" />
       </div>
     </div>

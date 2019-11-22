@@ -7,9 +7,14 @@
         </Select>
       </li>
       <li class="f-36 d-f p-center p-a" style="top:0">
-        <p>{{ company[0] }}-</p>
-        <p @click="branchType = true">{{ company[1] }}</p>
-        <p class="ml-20">生产看板</p>
+        <template v-if="type === 1">
+          <p>{{ company[0] }}-</p>
+          <p @click="branchType = true">{{ name || company[1] }}</p>
+          <p class="ml-20">生产看板</p>
+        </template>
+        <template v-if="type === 2">
+          <p @click="branchType = true">{{ name || company[0] }}</p>
+        </template>
       </li>
       <li class="f-24">{{ newDate }}</li>
     </ul>
@@ -40,11 +45,18 @@ export default {
         { value: 2, label: '部门二' }
       ],
       model: '',
-      branchModel: '',
+      branchModel: 1,
       branchType: false,
       company: ['企业名称', '部门名称'],
-      newDate: this.moment().format('YYYY年MM月DD日 HH:mm:ss')
+      newDate: this.moment().format('YYYY年MM月DD日 HH:mm:ss'),
+      name: ''
     };
+  },
+  props: {
+    type: {
+      type: Number,
+      default: 1
+    }
   },
   components: {},
   computed: {},
@@ -53,8 +65,9 @@ export default {
       this.branchType = false;
     },
     branchOk() {
-      this.company[1] = this.branchList.filter((r) => r.value === this.branchModel)[0].label;
+      this.name = this.branchList.filter((r) => r.value === this.branchModel)[0].label;
       this.cancel();
+      this.$emit('branch', this.branchModel);
     }
   },
   mounted() {
