@@ -1,7 +1,7 @@
 <template>
   <div class="order">
     <dp-header :type="2"></dp-header>
-    <Row :gutter="20" index="" class="mt-10" :style="{ height: boxHeight + '%' }">
+    <Row :gutter="20" index="" :style="{ height: boxHeight + '%' }">
       <Col span="6"> <today-plan-produced></today-plan-produced></Col>
       <Col span="6"> <produced></produced></Col>
       <Col span="6"> <product-completion></product-completion></Col>
@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       boxHeight: 23,
-      orderTableHeight: 70
+      orderTableHeight: 65
     };
   },
   methods: {},
@@ -43,6 +43,7 @@ export default {
 .order
   display: flex
   flex-direction: column
+  justify-content: space-around
   background-color: rgb(15, 17, 30)
   color: rgb(255, 255, 255)
   padding: 0 20px
@@ -54,8 +55,8 @@ export default {
     margin-left: 0 !important
     margin-right: 0 !important
   .ivu-col
-    padding-left: 10px !important
-    padding-right: 10px !important
+    padding-left: 5px !important
+    padding-right: 5px !important
     height: 100%
     &:first-child
       padding-left: 0 !important

@@ -5,7 +5,7 @@
         <p>今日新增订单</p>
         <Icon type="ios-alert-outline" class="info" />
       </div>
-      <p class="f-48 f-l-48">{{ $global.format(num) }}</p>
+      <p class="f-48 f-l-48">{{ num }}%</p>
       <div id="contrast1"></div>
     </div>
     <div class="footer"></div>
@@ -17,7 +17,7 @@ export default {
   name: 'productCompletion',
   data() {
     return {
-      num: 7896,
+      num: 86,
       day: [21, 32],
       chart: '',
       chartData: [80]

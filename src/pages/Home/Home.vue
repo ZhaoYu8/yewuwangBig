@@ -60,10 +60,10 @@ export default {
 <style lang="sass">
 .home
   .ivu-row
-    margin-left: -10px !important
-    margin-right: -10px !important
+    margin-left: -5px !important
+    margin-right: -5px !important
   .ivu-col
-    padding-left: 10px !important
-    padding-right: 10px !important
+    padding-left: 5px !important
+    padding-right: 5px !important
     height: 100%
 </style>
