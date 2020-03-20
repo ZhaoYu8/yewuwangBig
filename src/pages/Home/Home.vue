@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <dp-header></dp-header>
-    <Row :gutter="20" index="" class="mt-10" :style="{ height: boxHeight + '%' }">
+    <Row :gutter="20" index="" :style="{ height: boxHeight + '%' }">
       <Col span="6"> <today-plan-produced></today-plan-produced></Col>
       <Col span="6"> <produced></produced></Col>
       <Col span="6"> <product-completion></product-completion></Col>

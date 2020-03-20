@@ -2,17 +2,19 @@
   <div class="dp-header p-r">
     <ul class="d-f a-i-c j-c-s-b">
       <li>
-        <Select v-model="model" class="select">
-          <Option v-for="item in list" :value="item.value" :key="item.value">{{ item.label }}</Option>
-        </Select>
+        <template v-if="[1, 2].includes(type)">
+          <Select v-model="model" class="select">
+            <Option v-for="item in list" :value="item.value" :key="item.value">{{ item.label }}</Option>
+          </Select>
+        </template>
       </li>
-      <li class="f-36 d-f p-center p-a" style="top:0">
+      <li class="f-36 d-f p-center p-a">
         <template v-if="type === 1">
           <p>{{ company[0] }}-</p>
           <p @click="branchType = true">{{ name || company[1] }}</p>
           <p class="ml-20">生产看板</p>
         </template>
-        <template v-if="type === 2">
+        <template v-else>
           <p @click="branchType = true">{{ name || company[0] }}</p>
         </template>
       </li>
@@ -79,11 +81,12 @@ export default {
 </script>
 <style lang="sass" scoped>
 .dp-header
-  padding-top: 10px
+  padding: 10px 0
 </style>
 <style lang="sass">
 @import '../../assets/common.sass'
 .dp-header
+  color: #fff
   .select
     width:240px
     .ivu-select-selection
