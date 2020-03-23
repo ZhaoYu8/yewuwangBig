@@ -42,7 +42,6 @@ export default {
   computed: {},
   methods: {
     refresh() {
-      return;
       // 取得class 为 wrapper 下的全部的li
       let arrList = document.querySelector('.userScroll .wrapper').querySelectorAll('li');
       // 拿到当前html高度，因为全屏和不是全屏差别很大。 百分比高度不精准，总是慢一点，所以直接取的html的高度计算了。
@@ -60,10 +59,7 @@ export default {
         this.scrollY = x.offsetWidth + parseFloat(document.defaultView.getComputedStyle(x, null)['marginLeft']) * 2;
         // 到底了重新回到第一页 // scrollTo scrollBy方法区别很大，具体的可以去官网看文档。
         // 因为可以拖动，所以增加拖动判断，如果说拖动到底部了。也需要重置到第一页，不然程序会认为，你没有到底部。会一直执行往左拖动的效果。
-        if (
-          this.scrollIndex === this.arr.length - 3 ||
-          Math.ceil(Math.abs(this.scroll.x / this.scrollY)) > this.arr.length - 4
-        ) {
+        if (this.scrollIndex === this.arr.length - 3 || Math.ceil(Math.abs(this.scroll.x / this.scrollY)) > this.arr.length - 4) {
           this.scroll.scrollTo(0, 0, 500);
           this.scrollIndex = 0;
         } else {

@@ -21,13 +21,16 @@ li { list-style-type: none; }
 .f-l-26 { line-height: 26px; } 
 .w-240 { width: 240px; } 
 .ml-20 { margin-left: 20px; } 
+.mr-5 { margin-right: 5px; } 
 .mt-10 { margin-top: 10px; } 
 .mtb-5 { margin: 5px 0; } 
+.mtb-10 { margin: 10px 0; } 
 .mt-15 { margin-top: 15px; } 
 .mt-20 { margin-top: 20px; } 
 .mb-10 { margin-bottom: 10px; } 
 .mb-15 { margin-bottom: 15px; } 
 .mb-20 { margin-bottom: 20px; } 
+.pl-20 { padding-left: 20px; } 
 .f-l { float: left; } 
 .f-r { float: right; } 
 .p-r { position: relative; } 
@@ -43,3 +46,6 @@ td { background-color: #13182b !important; border-color: #d5d5d5 !important; col
 .diablo.ivu-table-wrapper-with-border { border-color: #d5d5d5 !important; } 
 .diablo .ivu-table:before { background-color: #d5d5d5 !important; } 
 .diablo .ivu-table-border:after { background-color: #d5d5d5 !important; } 
+i { font-style: normal; } 
+.f-l { float: left; } 
+.f-r { float: right; } 

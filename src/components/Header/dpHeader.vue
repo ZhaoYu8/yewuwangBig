@@ -81,7 +81,7 @@ export default {
 </script>
 <style lang="sass" scoped>
 .dp-header
-  padding: 10px 0
+  padding: 15px 0 10px 0
 </style>
 <style lang="sass">
 @import '../../assets/common.sass'
